@@ -9,13 +9,13 @@ public class Arena {
         ParticipantThree participantThree = new ParticipantThree();
         ParticipantFour participantFour = new ParticipantFour();
 
-        Course course = new Course(45);
-        course.getCourse(participantOne);
-        System.out.println(participantOne.getRun());
+        Course[] course = {new Course(45), new Course(34), new Course(52)};
+        Team[] teams = {participantOne, participantTwo, participantThree, participantFour};
+        for (Team t : teams) {
+            for (Course c : course) {
+                c.getCourse((CanRun) t);
+            }
 
-        Team [] teams = {participantOne,participantTwo,participantThree,participantFour};
-        for ( Team t: teams ) {
-                    course.getCourse((CanRun)t);
         }
     }
 }

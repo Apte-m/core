@@ -9,7 +9,7 @@ public class ParticipantFour extends Team implements CanRun {
         super("Фред");
     }
 
-    @Override
+
     public int getRun() {
         return run;
     }

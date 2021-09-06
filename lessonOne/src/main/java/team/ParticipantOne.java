@@ -4,12 +4,13 @@ import course.CanRun;
 import course.Course;
 
 public class ParticipantOne extends Team implements CanRun {
-    private final int run = 50;
+    private int run = 50;
+
     public ParticipantOne() {
         super("Антон");
     }
 
-    @Override
+
     public int getRun() {
         return run;
     }
