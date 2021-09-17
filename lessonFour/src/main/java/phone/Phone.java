@@ -1,25 +1,28 @@
 package phone;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Phone {
-    private Map<String, String> stringLongMap = new HashMap<>();
+    private HashMap<String, Set<Integer>> phone;
 
-    public String get(String a) {
-        return stringLongMap.get(a);
-
-
+    public Phone() {
+        this.phone = new HashMap<>();
     }
 
-    public void add(String a, String b) {
-        stringLongMap.put(a, b);
 
+    public void add(String famille, Integer contacts) {
+        if (!phone.containsKey(famille)) {
+            phone.put(famille, new HashSet<>());
+        }
+        phone.get(famille).add(contacts);
     }
 
-    @Override
-    public String toString() {
-        return
-                "Фамилия" + stringLongMap;
+
+    public Set<Integer> get(String famille) {
+        return phone.get(famille);
     }
+
+
 }
+
+
