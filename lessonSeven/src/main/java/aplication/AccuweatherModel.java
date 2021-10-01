@@ -7,6 +7,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class AccuweatherModel implements WeatherModel {
@@ -28,6 +29,8 @@ public class AccuweatherModel implements WeatherModel {
 
     private static final OkHttpClient okHttpClient = new OkHttpClient();
     private static final ObjectMapper objectMapper = new ObjectMapper();
+
+    private DataBaseRepository dataBaseRepository = new DataBaseRepository();
 
 
     public void getWeather(String selectedCity, Period period) throws IOException {
@@ -95,6 +98,10 @@ public class AccuweatherModel implements WeatherModel {
 
                 break;
         }
+    }
+    @Override
+    public List<Weather> getSavedToDBWeather() {
+        return dataBaseRepository.getSavedToDBWeather();
     }
 
 
